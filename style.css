@@ -1,0 +1,337 @@
+/*-----------------------------------*\
+
+  $RESET
+
+  Blanket reset. For something less
+  volatile, I’d recommend Eric
+  Meyer’s reset.
+
+\*-----------------------------------*/
+
+/* Sloppy reset. Applied to everything. */
+*, :before, :after {
+  margin: 0;
+  padding: 0;
+  /* Layout for dummies */
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+  position: relative;
+}
+
+/* Blanket ban on oversized images. */
+img {
+  max-width: 100%;
+}
+
+/*-----------------------------------*\
+
+  $SHARED
+
+  Reserved for html-level shared
+  properties and simple helpers.
+
+\*-----------------------------------*/
+
+/* Set up some vertical rhythm and block-level element helpers */
+p, .p, blockquote, table, form, ul, ol, .img,
+h1, .alpha, h2, .beta, .mega, .ultra {
+  display: block;
+  margin-bottom: 1.5rem;
+}
+
+/* Remove this for hanging bullets */
+ul, ol {
+  padding-left: 1.3em;
+}
+
+  /* Restore some normality to our nested lists */
+  li > ul, li > ol {
+    margin-bottom: 0;
+  }
+
+/*-----------------------------------*\
+
+  $TYPE
+
+  Low-level type things. Headings,
+  links, blockquotes, etc.
+
+\*-----------------------------------*/
+
+h1, .alpha {
+  font-size: 1.5rem;
+  line-height: 1;
+  font-weight: 700;
+}
+
+h2, .beta {
+  font-size: 1.25rem;
+  line-height: 1.5;
+}
+
+h3 {
+  font-size: 1rem;
+}
+
+.subhead, .meta {
+  color: #7b8993;
+}
+
+a {
+  color: inherit;
+  text-decoration: underline;
+}
+
+  a:hover {
+    color: #ff6501;
+  }
+
+.o--p--s {
+  font-size: .85rem;
+}
+
+/*-----------------------------------*\
+
+  Grid classes
+
+  Usage:
+  <div class="grid">
+    <div class="grid__col--1-of-2">
+      Blah
+    </div>
+
+    <div class="grid__col--1-of-2">
+      Blop
+    </div>
+  </div>
+
+\*-----------------------------------*/
+
+.grid {
+  width: 104.5%;
+  width: -webkit-calc(100% + 23px );
+  width: -webkit-calc(100% + 1.64706rem );
+  width: calc(100% + 23px );
+  width: calc(100% + 1.64706rem );
+  margin-left: -23px;
+  margin-left: -1.64706rem;
+}
+
+.grid .grid__col--1-of-2,
+.grid .grid__col--2-of-4 {
+  width: 50%;
+}
+
+.grid .grid__col--span-all,
+.grid > .span-all,
+.grid .grid__col--2-of-2,
+.grid .grid__col--3-of-3,
+.grid .grid__col--4-of-4,
+.grid .grid__col--5-of-5 {
+  width: 95.5%;
+  width: -webkit-calc(100% - 23px );
+  width: -webkit-calc(100% - 1.64706rem );
+  width: calc(100% - 23px );
+  width: calc(100% - 1.64706rem );
+  padding-left: 0 !important;
+  margin-left: 23px;
+  margin-left: 1.64706rem;
+}
+
+.grid .grid__col--1-of-3 {
+  width: 33.33333%;
+}
+
+.grid .grid__col--2-of-3 {
+  width: 66.66667%;
+}
+
+.grid .grid__col--1-of-4 {
+  width: 25%;
+}
+
+.grid .grid__col--3-of-4 {
+  width: 75%;
+}
+
+.grid .grid__col--1-of-5 {
+  width: 20%;
+}
+
+.grid .grid__col--2-of-5 {
+  width: 40%;
+}
+
+.grid .grid__col--3-of-5 {
+  width: 60%;
+}
+
+.grid .grid__col--4-of-5 {
+  width: 80%;
+}
+
+.grid > *,
+.grid > [class*="grid__col--"] {
+  display: inline-block;
+  vertical-align: top;
+  margin-right: -.24em;
+  padding-left: 23px;
+  padding-left: 1.64706rem;
+  min-height: 1px;
+}
+
+.grid .grid__col--d-first {
+  float: left;
+}
+
+.grid .grid__col--d-last {
+  float: right;
+}
+
+.grid.grid--no-gutter {
+  margin-left: 0;
+  width: 100%;
+}
+
+.grid.grid--no-gutter > * {
+  padding-left: 0;
+}
+
+.grid.grid--no-gutter .grid__col--span-all,
+.grid.grid--no-gutter > .span-all {
+  margin-left: 0;
+  width: 100%;
+}
+
+@media screen and (max-width: 47.5em) {
+  .grid {
+    margin-left: 0;
+    width: auto;
+  }
+
+  .grid > *,
+  .grid > [class*="grid__col--"] {
+    display: block;
+    width: auto;
+    margin-left: 0;
+    margin-right: 0;
+    padding-left: 0;
+  }
+
+  .grid .span-all,
+  .grid .grid__col--span-all {
+    width: auto;
+    margin-left: 0;
+  }
+}
+
+.grid .grid__col--centered {
+  display: block;
+  margin: 0 auto;
+}
+
+.grid .grid__col--align-bottom {
+  vertical-align: bottom;
+}
+
+/*-----------------------------------*\
+
+  $OBJECTS
+
+  Abstracted things and common
+  patterns go here. Not to be
+  confused with helpers.
+
+\*-----------------------------------*/
+
+.wrap {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.nav, .nav ul {
+  padding-left: 0;
+  list-style: none;
+}
+
+  .nav li, .nav a {
+    display: inline-block;
+  }
+
+.island {
+  padding: 1.5rem;
+}
+
+.isle {
+  padding: .75rem;
+}
+
+.o--b, .o--p, .o--p--hm {
+  display: block;
+}
+
+.o--p--hm {
+  margin-bottom: .75rem;
+}
+
+/*-----------------------------------*\
+
+  $MAIN
+
+  Anything that can’t be abstracted
+  or assigned to another section.
+  Low-level stuff.
+
+\*-----------------------------------*/
+
+html {
+  background-color: #faf9f7;
+  font: 125%/1.5 franklin-gothic-urw, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: #4a535d;
+  -webkit-font-smoothing: antialiased;
+}
+
+/*-----------------------------------*\
+  $HEADER
+\*-----------------------------------*/
+
+.site__header {
+
+}
+
+  .site__header .wrap {
+    border-bottom: 2px solid;
+  }
+
+  .site__title {
+    margin-bottom: 0;
+  }
+
+  .site__nav {
+
+  }
+
+/*-----------------------------------*\
+  $POSTS
+\*-----------------------------------*/
+
+.entry {
+
+}
+
+  .entry__header {
+
+  }
+
+    .entry__title {
+
+    }
+
+  .entry__content {
+
+  }
+
+/*-----------------------------------*\
+  $PAGES
+\*-----------------------------------*/
