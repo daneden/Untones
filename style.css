@@ -298,6 +298,12 @@ html {
   -webkit-font-smoothing: antialiased;
 }
 
+@media screen and (max-width: 500px) {
+  html {
+    font-size: 93.75%;
+  }
+}
+
 /*-----------------------------------*\
   $HEADER
 \*-----------------------------------*/
@@ -314,30 +320,11 @@ html {
     margin-bottom: 0;
   }
 
-  .site__nav {
-
-  }
-
 /*-----------------------------------*\
-  $POSTS
+  $FOOTER
 \*-----------------------------------*/
 
-.entry {
-
+.site__footer .wrap {
+  border-top: 1px solid;
+  padding-top: 1.5rem;
 }
-
-  .entry__header {
-
-  }
-
-    .entry__title {
-
-    }
-
-  .entry__content {
-
-  }
-
-/*-----------------------------------*\
-  $PAGES
-\*-----------------------------------*/
