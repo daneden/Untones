@@ -296,6 +296,7 @@ html {
   font: 112.5%/1.5 runda, "Helvetica Neue", Helvetica, Arial, sans-serif;
   color: #4a535d;
   -webkit-font-smoothing: antialiased;
+  -webkit-text-size-adjust: none;
 }
 
 @media screen and (max-width: 500px) {
