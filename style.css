@@ -325,6 +325,14 @@ html {
   $FOOTER
 \*-----------------------------------*/
 
+.tone + .tone {
+  border-top: 1px solid;
+}
+
+/*-----------------------------------*\
+  $FOOTER
+\*-----------------------------------*/
+
 .site__footer .wrap {
   border-top: 1px solid;
   padding-top: 1.5rem;
